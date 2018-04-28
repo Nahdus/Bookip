@@ -1,0 +1,33 @@
+
+{% extends "booklist/nav_bar.html" %}
+
+
+
+{%load static%}
+{%block list%}
+<link rel="stylesheet" type="text/css" href="{% static "/booklist/css_files/index.css" %}"/>
+
+
+
+
+
+
+<div id="list-view">
+<h1>{{message}}</h1>
+	<ul>
+
+	
+		<div class="listitem">
+	 {% for items in filter %}
+		
+     
+		<a href='{{items}}'><li>{{items}}</li></a>
+	
+		
+			
+	{% endfor %}
+		
+	</ul>
+
+</div>
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends "booklist/nav_bar.html" %}
+
+
+
+{%load static%}
+{%block list%}
+<div class="jumbotron vertical-center">
+    <div class="container">
+        <form action="" method="post" enctype="multipart/form-data">
+            <h2 class="form-heading">Submit book details</h2>
+            {% csrf_token %}
+            {% for field in form %}
+
+            <label>{{field.label_tag}}</label>
+            <span>{{ field.errors }}</span>
+            <div>
+                {{field}}
+            </div>
+            {% endfor %}
+            <br>
+            <button class="btn btn-large btn-primary" type="submit">submit</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,97 @@
+
+{% extends "booklist/nav_bar.html" %}
+
+
+
+{%load static%}
+{%block list%}
+<link rel="stylesheet" type="text/css" href="{% static "/booklist/css_files/index.css" %}"/>
+
+{%if result_not_found%}
+	<h1>No Results found</h1>
+{%else%}
+
+
+
+
+	<div id="list-view">
+	{%if message%}
+	<h1>{{message}}</h1>
+	{%endif%}
+		<ul>
+
+
+			<div class="listitem">
+					 {% for book in books %}
+					
+						<li>
+						<table style="width:100%">
+							<tr>
+								<th>
+								</th>
+								<th>Genre
+								</th>
+								<th>Rating
+								</th>
+								<th>Stock
+								</th>
+							
+							
+							</tr>
+							<tr>
+								<td>
+									<div id="book_cover">
+										{% with 'booklist/book_covers/'|add:book.book_cover as book_cover %}
+												<img src ="{% static book_cover %}"/>
+										{% endwith %}
+									</div>		
+												<h3>{{book.name}}</h3>
+												<p><em>{{book.author}}</em></p>
+								</td>
+								<td>{{book.genre}}</td>
+								
+								<td>
+								<div id="star">
+								{% for i in "x"|rjust:book.rating %}
+									
+									<img src="{% static "/booklist/icons/star.jpg"%}"/>
+									
+								{%endfor%}
+								</div>
+									
+								</td>
+								<td>{{book.stock}}</td>
+								
+								
+								
+							</tr>			
+						</table>
+							
+						   
+
+						</li>
+						{%endfor%}
+						 
+					</ul>
+					<div class="pagination">
+    <span class="step-links">
+        {% if books.has_previous %}
+            <a href="?page={{ books.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ books.number }} of {{ books.paginator.num_pages }}.
+        </span>
+
+        {% if books.has_next %}
+            <a href="?page={{ books.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+				</div>
+	
+	</div>
+{%endif%}
+
+
+{%endblock%}

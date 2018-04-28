@@ -1,0 +1,107 @@
+body {
+    background-color: #e6e6e6;
+}
+
+h3 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+#book_cover{
+	
+	width: 200px;
+	
+}
+#book_cover th{
+	
+	width: 200px;
+	text-align: left;
+}
+
+#book_cover td{
+	
+	width: 200px;
+	
+	text-align: center;
+}
+
+
+#star img{
+	width: 10px;
+	height: 10px;
+
+}
+
+
+
+#book_cover img{
+	height: 200px ;
+	
+}
+
+#list-view{
+margin: 50px
+
+}
+
+#list-view .listitem li {
+  padding: 10px;
+  overflow: auto;
+  list-style-type: none;
+
+}
+
+#list-view .listitem :hover {
+  overflow: auto;
+  list-style-type: none;
+  background: #bab9b4;
+  cursor: pointer;
+  text-decoration: none;
+
+
+}
+
+.listitem {
+
+   border: 5px outset #000000;
+   padding: 20px;
+   margin-left:70px;
+   margin-right:200px;
+}
+
+
+.listitem li{
+
+   border: 1px outset #000000;
+
+}
+
+
+
+
+
+#top-navbar
+{
+position: fixed;
+}
+
+
+
+}
+#list-view ul
+{
+padding:70px;
+}
+
+.jumbotron
+{
+margin: 50px
+}
+
+#form_container{
+	width:800px; 
+	margin:0;
+
+	
+}
+
+

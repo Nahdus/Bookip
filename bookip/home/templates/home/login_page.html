@@ -1,0 +1,42 @@
+<head>
+{% load static %}
+<link rel = "stylesheet"   type = "text/css"   href ="{% static "home/login_form.css"%}" />
+
+
+
+</head>
+
+
+<body>
+
+	<div id="login_form">
+	
+		<form method="post" enctype="multipart/form-data">
+		  <div class="welcome_user">
+			<h1>Sign in</h1>
+			<p>to continue Bookip</p>
+			<div class="error"><h3>{{error_message}}</h3></div>
+			 {% csrf_token %}
+		  </div>
+
+		  <div class="container">
+			<label><b>Username</b></label>
+			
+			<input type="text" placeholder="Enter Username" name="username" required>
+
+			<label><b>Password</b></label>
+			 
+			<input type="password" placeholder="Enter Password" name="password" required>
+
+			<button type="submit">Login</button>
+			<input type="checkbox" checked="checked"> Remember me
+		  </div>
+
+		  <div class="container" style="background-color:#f1f1f1">
+			
+		  </div>
+		</form>
+		
+	</div>
+	
+</body>
